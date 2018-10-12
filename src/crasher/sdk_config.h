@@ -39,7 +39,7 @@
 // <e> SPI_ENABLED - nrf_drv_spi - SPI/SPIM peripheral driver
 //==========================================================
 #ifndef SPI_ENABLED
-#define SPI_ENABLED 1
+#define SPI_ENABLED 0
 #endif
 // <o> SPI_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
 
@@ -99,7 +99,7 @@
 // <e> SPI1_ENABLED - Enable SPI1 instance
 //==========================================================
 #ifndef SPI1_ENABLED
-#define SPI1_ENABLED 1
+#define SPI1_ENABLED 0
 #endif
 // <q> SPI1_USE_EASY_DMA  - Use EasyDMA
 
@@ -130,7 +130,7 @@
 // <e> APP_USBD_ENABLED - app_usbd - USB Device library
 //==========================================================
 #ifndef APP_USBD_ENABLED
-#define APP_USBD_ENABLED 1
+#define APP_USBD_ENABLED 0
 #endif
 // <s> APP_USBD_VID - Vendor ID
 
@@ -390,7 +390,7 @@
 // <e> GPIOTE_ENABLED - nrf_drv_gpiote - GPIOTE peripheral driver
 //==========================================================
 #ifndef GPIOTE_ENABLED
-#define GPIOTE_ENABLED 1
+#define GPIOTE_ENABLED 0
 #endif
 // <o> GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS - Number of lower power input pins 
 #ifndef GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS
@@ -426,7 +426,7 @@
 // <e> POWER_ENABLED - nrf_drv_power - POWER peripheral driver
 //==========================================================
 #ifndef POWER_ENABLED
-#define POWER_ENABLED 1
+#define POWER_ENABLED 0
 #endif
 // <o> POWER_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
@@ -469,7 +469,7 @@
 
 
 #ifndef PPI_ENABLED
-#define PPI_ENABLED 1
+#define PPI_ENABLED 0
 #endif
 
 // <q> SYSTICK_ENABLED  - nrf_drv_systick - SysTick driver
@@ -482,7 +482,7 @@
 // <e> SAADC_ENABLED - nrf_drv_saadc - SAADC peripheral driver
 //==========================================================
 #ifndef SAADC_ENABLED
-#define SAADC_ENABLED 1
+#define SAADC_ENABLED 0
 #endif
 // <o> SAADC_CONFIG_RESOLUTION  - Resolution
 
@@ -540,7 +540,7 @@
 // <e> USBD_ENABLED - nrf_drv_usbd - USB driver
 //==========================================================
 #ifndef USBD_ENABLED
-#define USBD_ENABLED 1
+#define USBD_ENABLED 0
 #endif
 // <o> USBD_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
@@ -777,7 +777,7 @@
 
 
 #ifndef APP_USBD_CDC_ACM_ENABLED
-#define APP_USBD_CDC_ACM_ENABLED 1
+#define APP_USBD_CDC_ACM_ENABLED 0
 #endif
 
 // <q> BUTTON_ENABLED  - app_button - buttons handling module
@@ -858,13 +858,13 @@
  
 
 #ifndef NRF_STRERROR_ENABLED
-#define NRF_STRERROR_ENABLED 1
+#define NRF_STRERROR_ENABLED 0
 #endif
 
 // <e> PWM_ENABLED - nrf_drv_pwm - PWM peripheral driver - legacy layer
 //==========================================================
 #ifndef PWM_ENABLED
-#define PWM_ENABLED 1
+#define PWM_ENABLED 0
 #endif
 // <o> PWM_DEFAULT_CONFIG_OUT0_PIN - Out0 pin  <0-31>
 
@@ -964,7 +964,7 @@
 
 
 #ifndef PWM0_ENABLED
-#define PWM0_ENABLED 1
+#define PWM0_ENABLED 0
 #endif
 
 // <q> PWM1_ENABLED  - Enable PWM1 instance
@@ -994,7 +994,7 @@
 // <e> UART_ENABLED - nrf_drv_uart - UART/UARTE peripheral driver
 //==========================================================
 #ifndef APP_UART_ENABLED
-#define APP_UART_ENABLED 1
+#define APP_UART_ENABLED 0
 #endif
 
 #ifndef UART_ENABLED
@@ -1084,7 +1084,7 @@
 // <e> UART0_ENABLED - Enable UART0 instance
 //==========================================================
 #ifndef UART0_ENABLED
-#define UART0_ENABLED 1
+#define UART0_ENABLED 0
 #endif
 // <q> UART0_CONFIG_USE_EASY_DMA  - Default setting for using EasyDMA
 
@@ -1098,7 +1098,7 @@
 // <e> UART1_ENABLED - Enable UART1 instance
 //==========================================================
 #ifndef UART1_ENABLED
-#define UART1_ENABLED 1
+#define UART1_ENABLED 0
 #endif
 // <q> UART1_CONFIG_USE_EASY_DMA  - Default setting for using EasyDMA
 
@@ -1114,7 +1114,7 @@
 // <e> NRF_PWR_MGMT_ENABLED - nrf_pwr_mgmt - Power management module
 //==========================================================
 #ifndef NRF_PWR_MGMT_ENABLED
-#define NRF_PWR_MGMT_ENABLED 1
+#define NRF_PWR_MGMT_ENABLED 0
 #endif
 // <e> NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED - Enables pin debug in the module.
 
@@ -1238,14 +1238,14 @@
 
 
 #ifndef NRF_SECTION_ITER_ENABLED
-#define NRF_SECTION_ITER_ENABLED 1
+#define NRF_SECTION_ITER_ENABLED 0
 #endif
 
 // <q> NRF_STRERROR_ENABLED  - nrf_strerror - Library for converting error code to string.
 
 
 #ifndef NRF_STRERROR_ENABLED
-#define NRF_STRERROR_ENABLED 1
+#define NRF_STRERROR_ENABLED 0
 #endif
 
 // </h>
@@ -1420,7 +1420,7 @@
 // <i> Log data is buffered and can be processed in idle.
 
 #ifndef NRF_LOG_DEFERRED
-#define NRF_LOG_DEFERRED 0
+#define NRF_LOG_DEFERRED 1
 #endif
 
 // <o> NRF_LOG_BUFSIZE  - Size of the buffer for storing logs (in bytes).
@@ -2550,7 +2550,7 @@
 // <e> TWI_ENABLED - nrf_drv_twi - TWI/TWIM peripheral driver
 //==========================================================
 #ifndef TWI_ENABLED
-#define TWI_ENABLED 1
+#define TWI_ENABLED 0
 #endif
 // <o> TWI_DEFAULT_CONFIG_FREQUENCY  - Frequency
 
@@ -2596,7 +2596,7 @@
 // <e> TWI0_ENABLED - Enable TWI0 instance
 //==========================================================
 #ifndef TWI0_ENABLED
-#define TWI0_ENABLED 1
+#define TWI0_ENABLED 0
 #endif
 // <q> TWI0_USE_EASY_DMA  - Use EasyDMA (if present)
 
@@ -2825,7 +2825,7 @@
 // <e> RNG_ENABLED - nrf_drv_rng - RNG peripheral driver
 //==========================================================
 #ifndef RNG_ENABLED
-#define RNG_ENABLED 1
+#define RNG_ENABLED 0
 #endif
 // <q> RNG_CONFIG_ERROR_CORRECTION  - Error correction
  
@@ -2857,7 +2857,7 @@
 #endif
 
 #ifndef NRF_QUEUE_ENABLED
-#define NRF_QUEUE_ENABLED 1
+#define NRF_QUEUE_ENABLED 0
 #endif
 
 // </e>

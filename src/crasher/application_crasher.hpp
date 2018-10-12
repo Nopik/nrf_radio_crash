@@ -30,8 +30,15 @@ namespace Crasher {
       static void ListenerTask(void *aContextPtr) { static_cast<Application *>(aContextPtr)->ListenerTask(); }
       void ListenerTask();
 
+      static void LoggerTask(void *aContextPtr) {
+          static_cast<Application *>(aContextPtr)->LoggerTask();
+      }
+
+      void LoggerTask();
+
       static Wrappers::Task mTaskReadCommand;
       static Wrappers::Task mListenerTask;
+      static Wrappers::Task mTaskLogger;
   };
 
 }

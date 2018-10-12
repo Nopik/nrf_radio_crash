@@ -19,11 +19,8 @@ SRC_FILES += \
   $(PROJ_DIR)/crasher/application_crasher.cpp \
   $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_spi.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_timer.c \
-  $(SDK_ROOT)/components/libraries/uart/app_uart_fifo.c \
   $(SDK_ROOT)/components/libraries/fifo/app_fifo.c \
-  $(SDK_ROOT)/components/libraries/uart/retarget.c \
   $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_backend_rtt.c \
-  $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_backend_uart.c \
   $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_backend_serial.c \
   $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_default_backends.c \
   $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_frontend.c \
@@ -50,7 +47,6 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/util/nrf_assert.c \
   $(SDK_ROOT)/components/libraries/strerror/nrf_strerror.c \
   $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_clock.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_uart.c \
   $(SDK_ROOT)/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c \
   $(SDK_ROOT)/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c \
   $(SDK_ROOT)/modules/nrfx/hal/nrf_nvmc.c \
@@ -60,33 +56,16 @@ SRC_FILES += \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_printf.c \
   $(SDK_ROOT)/modules/nrfx/mdk/system_nrf52840.c \
   $(SDK_ROOT)/components/libraries/experimental_memobj/nrf_memobj.c \
-  $(SDK_ROOT)/components/libraries/pwr_mgmt/nrf_pwr_mgmt.c \
   $(SDK_ROOT)/components/libraries/experimental_section_vars/nrf_section_iter.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_ppi.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_saadc.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uart.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_gpiote.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uarte.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_twim.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_clock.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_rng.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_ppi.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_power.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_power_clock.c \
   $(SDK_ROOT)/components/libraries/atomic/nrf_atomic.c \
   $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_clock.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_rng.c \
-  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_spim.c \
   $(SDK_ROOT)/components/libraries/balloc/nrf_balloc.c \
   $(SDK_ROOT)/external/fprintf/nrf_fprintf.c \
   $(SDK_ROOT)/external/fprintf/nrf_fprintf_format.c \
   $(SDK_ROOT)/components/libraries/experimental_log/src/nrf_log_str_formatter.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_power.c \
-  $(SDK_ROOT)/components/libraries/queue/nrf_queue.c \
   $(SDK_ROOT)/components/libraries/atomic_fifo/nrf_atfifo.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_systick.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_rng.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_twi.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp.c \
   $(RADIO_DRIVER_ROOT)/nrf_802154.c \
   $(RADIO_DRIVER_ROOT)/nrf_802154_ack_pending_bit.c \
@@ -113,15 +92,12 @@ SRC_FILES += \
   $(RADIO_DRIVER_ROOT)/mac_features/nrf_802154_filter.c \
   $(RADIO_DRIVER_ROOT)/timer_scheduler/nrf_802154_timer_sched.c \
   $(RADIO_DRIVER_ROOT)/raal/single_phy/single_phy.c \
-  $(SDK_ROOT)/components/libraries/button/app_button.c \
-  $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_rng.c \
   $(PROJ_DIR)/wrappers/wtask.cpp \
   $(PROJ_DIR)/wrappers/wmutex.cpp \
 
 # Include folders common to all targets
 INC_FOLDERS += \
   $(PROJ_DIR)/crasher \
-  $(PROJ_DIR)/common \
   $(PROJ_DIR)/platform/nrf52840 \
   $(SDK_ROOT)/modules/nrfx/hal \
   $(SDK_ROOT)/components/libraries/uart \
@@ -177,7 +153,6 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/libraries/low_power_pwm \
   $(SDK_ROOT)/components/libraries/hardfault \
   $(SDK_ROOT)/components/ble/ble_services/ble_cscs \
-  $(SDK_ROOT)/components/libraries/uart \
   $(SDK_ROOT)/components/libraries/hci \
   $(SDK_ROOT)/components/libraries/timer \
   $(SDK_ROOT)/components/toolchain \

@@ -273,10 +273,14 @@ void NrfRadio::FrameReceived(uint8_t *p_data, uint8_t length, int8_t power, uint
     return;
   } else {
 
+    bsp_board_led_invert(0);
       ++frameCnt;
-      if( (frameCnt % 10) == 0 ) {
-          NRF_LOG_INFO("Frame %d received, len: %d, rssi %d lqi %d dropping=%d", frameCnt, length, power, lqi,
-                       receiveBufferFull);
+//      if( (frameCnt % 10) == 0 ) {
+//          NRF_LOG_INFO("Frame %d received, len: %d, rssi %d lqi %d dropping=%d", frameCnt, length, power, lqi, receiveBufferFull);
+//      }
+
+      if( frameCnt == 500 ) {
+        NVIC_SystemReset();
       }
 
     if( receiveBufferFull == false ) {

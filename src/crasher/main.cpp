@@ -25,13 +25,7 @@ int main(int argc, char *argv[]) {
 
   NRF_LOG_DEFAULT_BACKENDS_INIT();
 
-  NRF_LOG_INFO("\r\n");
-  NRF_LOG_INFO("------------------------------------");
-  NRF_LOG_INFO("Starting radio crasher");
-  NRF_LOG_INFO("------------------------------------");
-#if NRF_LOG_ENABLED
-  NRF_LOG_PROCESS();
-#endif //NRF_LOG_ENABLED
+  NRF_LOG_INFO("Starting");
 
   NrfRadio::Init();
 
