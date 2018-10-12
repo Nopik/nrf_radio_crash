@@ -1,0 +1,14 @@
+#ifndef CRASHER_ERROR_TYPES_H
+#define CRASHER_ERROR_TYPES_H
+
+
+enum class ErrorType {
+  NO_ERROR = 0,
+  UNKNOWN_ERROR = -1,
+  NOT_FOUND = -2,
+  INVALID_PARAMETERS = -3,
+  INTERNAL_ERROR = -4,
+  NOT_ENOUGH_MEMORY = -5
+};
+
+#endif

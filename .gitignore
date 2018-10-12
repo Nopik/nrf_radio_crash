@@ -1,0 +1,4 @@
+.idea/
+third_party/
+cmake-build-debug/
+src/platform/nrf52840/crasher/build/
