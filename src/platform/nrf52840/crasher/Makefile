@@ -2,6 +2,8 @@ THIRD_PARTY_DIR             = ../../../../third_party
 SDK_ROOT                    = ${THIRD_PARTY_DIR}/nRF5_SDK_for_Thread_and_Zigbee
 BOARD                       ?= PCA10056
 
+CFLAGS += -DMASTER_NODE
+
 BUILD_DIR        := ../../../../build/nrf52840-node
 PROJECT_NAME     := crasher
 TARGETS          := nrf52840_xxaa

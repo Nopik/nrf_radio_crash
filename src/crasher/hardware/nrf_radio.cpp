@@ -93,7 +93,7 @@ void NrfRadio::GetAddr(uint8_t *destAddr, int *len){
 
 ErrorType NrfRadio::TransmitRaw(RadioFrame *frame, uint16_t timeout, uint8_t seqNum, bool ack, bool morePending, bool unicast)
 {
-  NRF_LOG_INFO("Transmit len: %d timeout %d", frame->payloadLength, timeout)
+//  NRF_LOG_INFO("Transmit len: %d timeout %d", frame->payloadLength, timeout)
 
   memset(mTransmitterBuf, 0, TX_SINGLE_FRAME_BUFFER_SIZE);
 
@@ -133,7 +133,7 @@ ErrorType NrfRadio::TransmitRaw(RadioFrame *frame, uint16_t timeout, uint8_t seq
 
   for(uint8_t i=0;i<RETRIES_COUNT; i++){
     nrf_802154_transmit_csma_ca(mTransmitterBuf, sizeof( mTransmitterBuf ));
-    NRF_LOG_INFO("Transmitted data, try %d, timeout=%d", i, timeout );
+//    NRF_LOG_INFO("Transmitted data, try %d, timeout=%d", i, timeout );
 //    NRF_LOG_HEXDUMP_INFO(mTransmitterBuf, sizeof(mTransmitterBuf));
 
     if( !ack ) {
@@ -176,7 +176,7 @@ ErrorType NrfRadio::Transmit(uint8_t *destAddr, uint8_t *payload, uint32_t paylo
   if(totalChunks == 0){
     totalChunks = 1;
   }
-  NRF_LOG_INFO("Payload size: %d, total chunks: %d", payloadLen, totalChunks);
+//  NRF_LOG_INFO("Payload size: %d, total chunks: %d", payloadLen, totalChunks);
 
   mTransmitterSingleFrame.totalChunks = totalChunks;
 
@@ -193,13 +193,13 @@ ErrorType NrfRadio::Transmit(uint8_t *destAddr, uint8_t *payload, uint32_t paylo
       morePending = true;
     }
 
-    NRF_LOG_INFO("Sending chunk %d, current size: %d", currentChunk, currentChunkLen);
+//    NRF_LOG_INFO("Sending chunk %d, current size: %d", currentChunk, currentChunkLen);
 
     mTransmitterSingleFrame.currentChunk = currentChunk;
     memcpy(mTransmitterSingleFrame.payload, payload+ptrOffset, currentChunkLen);
     mTransmitterSingleFrame.payloadLength = currentChunkLen;
     err = NrfRadio::TransmitRaw(&mTransmitterSingleFrame, 100, i, ack, morePending, destAddr != NULL );
-    NRF_LOG_INFO("TransmitRaw returned %d", err);
+//    NRF_LOG_INFO("TransmitRaw returned %d", err);
 
     if (err != ErrorType::NO_ERROR) {
       NRF_LOG_INFO("Chunk send error, exiting");
@@ -207,7 +207,7 @@ ErrorType NrfRadio::Transmit(uint8_t *destAddr, uint8_t *payload, uint32_t paylo
     }
   }
 
-  NRF_LOG_INFO("All chunks sent");
+//  NRF_LOG_INFO("All chunks sent");
   return ErrorType::NO_ERROR;
 }
 

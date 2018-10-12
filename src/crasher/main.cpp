@@ -25,7 +25,11 @@ int main(int argc, char *argv[]) {
 
   NRF_LOG_DEFAULT_BACKENDS_INIT();
 
-  NRF_LOG_INFO("Starting");
+#ifdef MASTER_NODE
+  NRF_LOG_INFO("Starting sender");
+#else
+  NRF_LOG_INFO("Starting receiver");
+#endif
 
   NrfRadio::Init();
 

@@ -16,14 +16,16 @@ void Application::Run(int argc, char **argv) {
 //      NRF_LOG_INFO("Read command task created");
     }
 
+#ifndef MASTER_NODE
     if (mListenerTask.Create(ListenerTask, this, "LISTENER", DEFAULT_TASK_STACK_SIZE, DEFAULT_TASK_PRIORITY,
                                 false) != Task::Status::NO_ERROR) {
       NRF_LOG_ERROR("Error while creating listener task");
     } else {
 //      NRF_LOG_INFO("Listener task created");
     }
+#endif
 
-    #if NRF_LOG_ENABLED && NRF52840_XXAA && NRF_LOG_DEFERRED
+#if NRF_LOG_ENABLED && NRF52840_XXAA && NRF_LOG_DEFERRED
     if( mTaskLogger.Create(LoggerTask, this, "LOGGER") != Task::Status::NO_ERROR ) {
         NRF_LOG_ERROR("Error while creating logger task");
     } else {
@@ -51,7 +53,17 @@ void Application::ListenerTask() {
 }
 
 void Application::ReadCommandTask() {
+#ifdef MASTER_NODE
+    while (true) {
+        uint8_t dummyPayload[] = {'x'};
+        NrfRadio::Transmit(NULL, dummyPayload, sizeof(dummyPayload), (uint8_t *) "pi", 10, false);
 
+        bsp_board_led_invert( 0 );
+
+        mTaskReadCommand.DelayUntil(20UL);
+    }
+
+#else
 //  NRF_LOG_INFO("Waiting");
   while (true) {
       TickType_t mLastWakeTime = xTaskGetTickCount();
@@ -62,6 +74,7 @@ void Application::ReadCommandTask() {
           NRF_LOG_INFO("SLEEP l-o=%d l=%d c-o=%d c=%d o=%d", mLastWakeTime - org, mLastWakeTime, cur-org, cur, org);
       }
   }
+#endif
 }
 
 #if NRF_LOG_ENABLED && NRF52840_XXAA && NRF_LOG_DEFERRED
