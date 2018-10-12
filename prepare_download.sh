@@ -21,7 +21,7 @@ unzip -q -o ${NRF_SDK_FILE} -d ${NRF_SDK_DIR_NAME}
 
 echo "Downloading nRF 802.15.4 radio driver"
 NRF_RADIO_DRIVER_DIR=nRF802.15.4-radio-driver
-NRF_RADIO_DRIVER_COMMIT_SHA=40c2e6fcfdc1a2d427b26b38ffa13023665bf0b9
+NRF_RADIO_DRIVER_COMMIT_SHA=cf56868e307afe8af64e81738cec02688e22ea99
 NRF_RADIO_DRIVER_FILE=nRF802.15.4-radio-driver-${NRF_RADIO_DRIVER_COMMIT_SHA}.zip
 
 wget https://github.com/NordicSemiconductor/nRF-IEEE-802.15.4-radio-driver/archive/${NRF_RADIO_DRIVER_COMMIT_SHA}.zip -O ${NRF_RADIO_DRIVER_FILE}
