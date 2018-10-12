@@ -89,11 +89,16 @@ void Application::LoggerTask()
 
 extern "C" void vApplicationIdleHook(void);
 
+static int cnt = 0;
 void vApplicationIdleHook(void) {
+    cnt++;
+
+    if( (cnt % 10000) == 0 ) {
+        bsp_board_led_invert(1);
+    }
 #if NRF_LOG_ENABLED && NRF52840_XXAA && NRF_LOG_DEFERRED
     Application::mTaskLogger.Resume();
 #endif
-
 }
 
 extern "C" void vAssertCalled(unsigned long ulLine, const char *const pcFileName);
